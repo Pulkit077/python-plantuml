@@ -173,7 +173,7 @@ class PlantUML(object):
             raise PlantUMLHTTPError(response, content)
         return content
 
-    def processes_file(self, filename, outfile=None, errorfile=None, directory=''):
+    def processes_file(self, filename, outfile=None, errorfile=None, directory='', encoding="utf8"):
         """Take a filename of a file containing plantuml text and processes
         it into a .png image.
         
@@ -194,7 +194,7 @@ class PlantUML(object):
             errorfile = path.splitext(filename)[0] + '_error.html'
         if directory and not path.exists(directory):
             makedirs(directory)
-        data = open(filename).read()
+        data = open(filename, encoding=encoding).read()
         try:
             content = self.processes(data)
         except PlantUMLHTTPError as e:
