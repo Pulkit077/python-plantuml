@@ -1,14 +1,13 @@
 from setuptools import setup
-from plantuml import __author__, __version_string__, __email__
 
 setup(
     name='plantuml',
-    version=__version_string__,
+    version='0.3.0',
     description='',
     long_description=open('README.md', 'r').read(),
     url='https://github.com/dougn/python-plantuml/',
-    author=__author__,
-    author_email=__email__,
+    author='Doug Napoleone, Samuel Marks, Eric Frederich',
+    author_email='doug.napoleone+plantuml@gmail.com',
     license='BSD',
     py_modules=['plantuml'],
     classifiers=[
